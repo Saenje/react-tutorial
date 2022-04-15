@@ -6,10 +6,17 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 class Square extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: null,
+      };
+    }
+
     render() {
       return (
-        <button className="square" onClick={function(){console.log('click');}}>
-          {this.props.value}
+        <button className="square" onClick={() => {console.log({value: 'X'})}}>
+          {this.state.value}
         </button>
       );
     }
